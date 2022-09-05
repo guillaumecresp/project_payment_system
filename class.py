@@ -1,4 +1,4 @@
-class client:
+class Client:
     def __init__(self, name, age, address):
         self.name = name
         self.age = age
@@ -10,7 +10,7 @@ class client:
 class User(client):
     is_User = True
 
-class payment:
+class Payment:
     def __init__(self, card_number, cvv, expiry_date):
         self.card_number = card_number
         self.cvv = cvv
@@ -28,3 +28,12 @@ class Bank(payment):
     def display(self):
         print("Bank Name: ", self.bank_name)
         print("Account Number: ", self.account_number)
+
+class Paypal(payment):
+    is_Paypal = True
+    def __init__(self, email, password):
+        self.email = email
+        self.password = password
+    def display(self):
+        print("Email: ", self.email)
+        print("Password: ", self.password)
